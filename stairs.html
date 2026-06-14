@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Tetők</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+
+    /* important: start hidden safely */
+    display: none;
+}
+
+/* Swiper full screen */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* navigation above everything */
+.swiper-button-next,
+.swiper-button-prev {
+    z-index: 10000;
+}
+
+/* close button */
+.close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 10001;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Lépcsők</h1>
+</header>
+
+<nav>
+    <a href="index.html">Főoldal</a>
+    <a href="stairs.html">Lépcsők</a>
+    <a href="gate.html">Kapuk</a>
+    <a href="furniture.html">Bútorok</a>
+    <a href="roof.html">Tető munkák</a>
+</nav>
+
+<section class="gallery">
+
+    <img src="Pictures/Stair/Optimized/Stair_1.jpg" onclick="openSwiper(0)">
+<img src="Pictures/Stair/Optimized/Stair_2.jpg" onclick="openSwiper(1)">
+<img src="Pictures/Stair/Optimized/Stair_3.jpg" onclick="openSwiper(2)">
+<img src="Pictures/Stair/Optimized/Stair_4.jpg" onclick="openSwiper(3)">
+<img src="Pictures/Stair/Optimized/Stair_5.jpg" onclick="openSwiper(4)">
+<img src="Pictures/Stair/Optimized/Stair_6.jpg" onclick="openSwiper(5)">
+<img src="Pictures/Stair/Optimized/Stair_7.jpg" onclick="openSwiper(6)">
+<img src="Pictures/Stair/Optimized/Stair_8.jpg" onclick="openSwiper(7)">
+<img src="Pictures/Stair/Optimized/Stair_9.jpg" onclick="openSwiper(8)">
+
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+
+    <span class="close" onclick="closeSwiper()">✕</span>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_1.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_2.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_3.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_4.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_5.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_6.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_7.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_8.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Stair/Optimized/Stair_9.jpg"></div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Bírófa</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+let swiper = null;
+const lightbox = document.getElementById("lightbox");
+
+function initSwiper() {
+    swiper = new Swiper('.mySwiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        observer: true,
+        observeParents: true
+    });
+}
+
+function openSwiper(index) {
+
+    lightbox.style.display = "block";
+    document.body.style.overflow = "hidden";
+
+    if (!swiper) {
+        initSwiper();
+    }
+
+    requestAnimationFrame(() => {
+        swiper.update();
+        swiper.slideTo(index, 0);
+    });
+}
+
+function closeSwiper() {
+    lightbox.style.display = "none";
+    document.body.style.overflow = "";
+}
+</script>
+
+</body>
+</html>

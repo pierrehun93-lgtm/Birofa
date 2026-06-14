@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Kapuk</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>Kapuk</h1>
+</header>
+
+<nav>
+<a href="index.html">Főoldal</a>
+<a href="stairs.html">Lépcsők</a>
+<a href="gate.html">Kapuk</a>
+<a href="furniture.html">Bútorok</a>
+<a href="roof.html">Tető munkák</a>
+</nav>
+
+<section class="gallery">
+
+<img src="Pictures/Roof/Roof_1.jpg" onclick="openSwiper(0)">
+<img src="Pictures/Roof/Roof_2.jpg" onclick="openSwiper(1)">
+<img src="Pictures/Roof/Roof_3.jpg" onclick="openSwiper(2)">
+<img src="Pictures/Roof/Roof_4.jpg" onclick="openSwiper(3)">
+<img src="Pictures/Roof/Roof_5.jpg" onclick="openSwiper(4)">
+<img src="Pictures/Roof/Roof_6.jpg" onclick="openSwiper(5)">
+<img src="Pictures/Roof/Roof_7.jpg" onclick="openSwiper(6)">
+<img src="Pictures/Roof/Roof_8.jpg" onclick="openSwiper(7)">
+<img src="Pictures/Roof/Roof_9.jpg" onclick="openSwiper(8)">
+<img src="Pictures/Roof/Roof_10.jpg" onclick="openSwiper(9)">
+<img src="Pictures/Roof/Roof_11.jpg" onclick="openSwiper(10)">
+<img src="Pictures/Roof/Roof_12.jpg" onclick="openSwiper(11)">
+<img src="Pictures/Roof/Roof_13.jpg" onclick="openSwiper(12)">
+<img src="Pictures/Roof/Roof_14.jpg" onclick="openSwiper(13)">
+<img src="Pictures/Roof/Roof_15.jpg" onclick="openSwiper(14)">
+<img src="Pictures/Roof/Roof_16.jpg" onclick="openSwiper(15)">
+<img src="Pictures/Roof/Roof_17.jpg" onclick="openSwiper(16)">
+<img src="Pictures/Roof/Roof_18.jpg" onclick="openSwiper(17)">
+<img src="Pictures/Roof/Roof_19.jpg" onclick="openSwiper(18)">
+<img src="Pictures/Roof/Roof_20.jpg" onclick="openSwiper(19)">
+<img src="Pictures/Roof/Roof_21.jpg" onclick="openSwiper(20)">
+
+</section>
+<div id="lightbox" class="lightbox">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_1.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_2.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_3.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_4.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_5.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_6.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_7.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_8.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_9.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_10.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_11.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_12.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_13.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_14.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_15.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_16.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_17.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_18.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_19.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_20.jpg"></div>
+      <div class="swiper-slide"><img src="Pictures/Roof/Roof_21.jpg"></div>
+
+    </div>
+
+    <!-- Controls -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <span class="close" onclick="closeSwiper()">✕</span>
+</div>
+<script>
+let swiper;
+
+function openSwiper(index) {
+  document.getElementById("lightbox").style.display = "block";
+
+  if (!swiper) {
+    swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  swiper.slideTo(index, 0);
+}
+
+function closeSwiper() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+
+
+
+</section>
+
+<footer>
+<p>© 2026 Bírófa</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
